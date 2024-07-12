@@ -13,7 +13,7 @@ public class User {
     private String phone;
     private Geo geo;
 
-    public User(int id, String name, String username, String email, Address address, Geo geo, String phone, String website, Company company) {
+    public User(int id, String name, String username, String email, Address address, String phone, String website, Company company) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -22,7 +22,7 @@ public class User {
         this.phone = phone;
         this.website = website;
         this.company = company;
-        this.geo = geo;
+
     }
 
     private String website;
@@ -108,15 +108,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", address=" + address +
-                ", phone='" + phone + '\'' +
-                ", website='" + website + '\'' +
-                ", company=" + company +
-                '}';
+        return "User{" + "id=" + id + ", name='" + name + '\'' + ", username='" + username + '\'' + ", email='" + email + '\'' + ", address=" + address + ", phone='" + phone + '\'' + ", website='" + website + '\'' + ", company=" + company + '}';
     }
 }
