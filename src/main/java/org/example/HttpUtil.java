@@ -1,24 +1,30 @@
 package org.example;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 
 public class HttpUtil {
     private static final HttpClient CLIENT = HttpClient.newHttpClient();
     private static final Gson GSON = new Gson();
 
-    public static User sendGet(URI uri) throws IOException, InterruptedException {
+    public static List<User> sendGet(URI uri) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
                 .GET()
                 .build();
         HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
-        return GSON.fromJson(response.body(), User.class);
+        Type listType = new TypeToken <List<User>>(){}.getType();
+        List<User> users = GSON.fromJson(response.body(), listType);
+        return users;
     }
 
     public static User sendPost(URI uri, User user) throws IOException, InterruptedException {

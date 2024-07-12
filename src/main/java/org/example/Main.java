@@ -18,15 +18,17 @@ public class Main {
         User user = defaultUser();
 
         //User createdUser = HttpUtil.sendPost(URI.create(BASE_URL), user);
-       // System.out.println(createdUser);
+        // System.out.println(createdUser);
 
-//        var user1 = HttpUtil.sendGet(URI.create(BASE_URL));
-//        System.out.println(user1);
+        // Get all Users
+        // List<User> allUsers = HttpUtil.sendGet(URI.create(BASE_URL));
+        //System.out.println(allUsers);
 
         // PUT Method
-    // HttpUtil.sendPut(URI.create(BASE_URL),user);
+        // HttpUtil.sendPut(URI.create(BASE_URL),user);
+
         // DELETE Method
-      //HttpUtil.sendDelete(URI.create(BASE_URL),user);
+        //HttpUtil.sendDelete(URI.create(BASE_URL),user);
     }
 
     private static User defaultUser() {
